@@ -188,5 +188,50 @@ export const about: About[] = [
       "Building robust web applications with modern frameworks, RESTful APIs, and databases.",
     icon: FaPython,
   },
+];
 
+interface Education {
+  id: number;
+  level: string;
+  school: string;
+  degree: string;
+  description: string;
+  location: string;
+  year: string;
+  image: string;
+}
+
+export const education: Education[] = [
+  {
+    id: 0,
+    level: "Graduate Student in Computer Science",
+    school: "Georgia Institute of Technology",
+    degree: "Graduate",
+    description:
+      "Focus in high-level machine learning principles and algorithms",
+    location: "Atlanta, GA",
+    year: "2025 - Present",
+    image: "gt.png",
+  },
+  {
+    id: 1,
+    level: "Bachelor of Science in Computer Science",
+    school: "Georgia Institute of Technology",
+    degree: "Bachelor",
+    description:
+      "Focused in fundamental computer science principles and core machine learning technologies",
+    location: "Atlanta, GA",
+    year: "2023 - 2025",
+    image: "gt.png",
+  },
+  {
+    id: 2,
+    level: "Undergraduate Student in Computer Science",
+    school: "The University of Georgia",
+    degree: "Bachelor",
+    description: "Focused in fundamental computer science principles",
+    location: "Athens, GA",
+    year: "2021 - 2022",
+    image: "uga.png",
+  },
 ];
