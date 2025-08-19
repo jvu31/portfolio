@@ -16,7 +16,7 @@ const Skills = () => {
       <div className="space-y-2">
         {skills.map((skill) => (
           <div key={skill.skillId} className="section">
-            <div className="flex space-x-2 border-b border-light_gray items-center">
+            <div className="flex space-x-2 border-light_gray border-b-2 items-center">
               <skill.skillIcon className="text-purple" size={40} />
               <h2>{skill.skillName}</h2>
             </div>

@@ -7,6 +7,8 @@ const LazyAbout = React.lazy(() => import("../components/About"));
 const LazyNavBar = React.lazy(() => import("../components/NavBar"));
 const LazySkills = React.lazy(() => import("../components/Skills"));
 const LazyProjects = React.lazy(() => import("../components/Projects"));
+const LazyCats = React.lazy(() => import("../components/Cats"));
+
 
 
 export default function Home() {
@@ -46,6 +48,19 @@ export default function Home() {
           >
             <Suspense fallback={<div>Loading Skills...</div>}>
               <LazySkills />
+            </Suspense>
+          </motion.div>
+        )}
+        {page === "cats" && (
+          <motion.div
+            key="cats"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Suspense fallback={<div>Loading Cats...</div>}>
+              <LazyCats />
             </Suspense>
           </motion.div>
         )}

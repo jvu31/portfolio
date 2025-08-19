@@ -5,7 +5,14 @@ const NavBar = ({ setPage }: { setPage: (page: string) => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activePage, setActivePage] = useState("about");
 
-  const pages = ["about", "skills", "experience", "projects", "education", "cats Pics"];
+  const pages = [
+    "about",
+    "skills",
+    "experience",
+    "projects",
+    "education",
+    "cats",
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +28,7 @@ const NavBar = ({ setPage }: { setPage: (page: string) => void }) => {
 
   const handleNavClick = (pageName: string) => {
     setPage(pageName);
-    setActivePage(pageName)
+    setActivePage(pageName);
   };
 
   return (
