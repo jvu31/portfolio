@@ -12,6 +12,7 @@ const NavBar = ({ setPage }: { setPage: (page: string) => void }) => {
     "projects",
     "education",
     "cats",
+
   ];
 
   useEffect(() => {

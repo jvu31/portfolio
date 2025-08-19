@@ -19,52 +19,68 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Suspense fallback={<div>Loading Navigation...</div>}>
         <LazyNavBar setPage={handlePageChange} />
       </Suspense>
 
-      <AnimatePresence mode="wait">
-        {page === "about" && (
-          <motion.div
-            key="about"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Suspense fallback={<div>Loading About...</div>}>
-              <LazyAbout />
-            </Suspense>
-          </motion.div>
-        )}
-        {page === "skills" && (
-          <motion.div
-            key="skills"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Suspense fallback={<div>Loading Skills...</div>}>
-              <LazySkills />
-            </Suspense>
-          </motion.div>
-        )}
-        {page === "cats" && (
-          <motion.div
-            key="cats"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Suspense fallback={<div>Loading Cats...</div>}>
-              <LazyCats />
-            </Suspense>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div style={{ flexGrow: 1, overflowY: "auto" }}>
+        <AnimatePresence mode="wait">
+          {page === "about" && (
+            <motion.div
+              key="about"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div>Loading About...</div>}>
+                <LazyAbout />
+              </Suspense>
+            </motion.div>
+          )}
+          {page === "skills" && (
+            <motion.div
+              key="skills"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div>Loading Skills...</div>}>
+                <LazySkills />
+              </Suspense>
+            </motion.div>
+          )}
+          {/* Add LazyProjects here when ready */}
+          {page === "projects" && (
+            <motion.div
+              key="projects"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div>Loading Projects...</div>}>
+                <LazyProjects />
+              </Suspense>
+            </motion.div>
+          )}
+          {page === "cats" && (
+            <motion.div
+              key="cats"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div>Loading Cats...</div>}>
+                <LazyCats />
+              </Suspense>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
